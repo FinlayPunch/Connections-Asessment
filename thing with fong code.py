@@ -56,7 +56,7 @@ def setup_word_categories():
 
 connections = [
 {"Connecting Word": "Vegetable Homphones", "Words": ['Charred', 'Beat', 'Leak', 'Pee']},
-{"Connecting Word": "Party Pooper", "Words": ['Charred', 'Beat', 'Leak', 'Pee']},
+{"Connecting Word": "Party Pooper", "Words": ['Drag', 'Drip', 'Drip', 'Dud']},
 {"Connecting Word": "---Cast", "Words": ['Pod', 'Broad', 'Fore', 'Type']},
 {"Connecting Word": "Musical Sections", "Words": ['Brass', 'String', 'Rythym', 'Wind']},
 ]
@@ -73,10 +73,16 @@ for connection in connections: #for each of the connections, access the dictiona
     col = 0
     for word in connection["Words"]: #within dictionary, get word
         #put the word inside the correct GR
-        grid[row][col] = word
+        grid[row][col] = (word)
         col = col + 1 #moves to the column
     row = row + 1 #moves to next row
-print(grid[random.randint(0, 4)])
+
+print(grid)
+
+# print(random.choice(grid))
+# print(random.choice(grid))
+# print(random.choice(grid))
+# print(random.choice(grid))
 
 
 

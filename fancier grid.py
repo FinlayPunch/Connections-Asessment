@@ -1,3 +1,5 @@
+import random
+
 def print_words_from_categories(word_categories):
 
     for category in word_categories:
@@ -72,7 +74,7 @@ def display_game(word_categories, grid_size):
         print((grid_size*4+19)*"-")
 
 
-display_game(word_categories[0]["words"][0], 4)
+display_game(word_categories[0]["words"][random.randint(0,3)], 4)
 
 
 

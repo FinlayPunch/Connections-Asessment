@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-28T02:44:10.225Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="vUFh_lxSVKLYaBKxx1y6" version="23.1.4" type="device">
+<mxfile host="app.diagrams.net" modified="2024-02-28T04:10:49.252Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="uFZCZ2uFeFdkimmwHWxz" version="23.1.4" type="device">
   <diagram name="Page-1" id="dtFRwcxsvF_0hZMCSyhE">
     <mxGraphModel dx="875" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -165,8 +165,8 @@
         <mxCell id="E8tcelXD3QDB-gluEK94-47" value="guessed sets" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="482" y="630" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="E8tcelXD3QDB-gluEK94-50" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="570" width="120" height="60" as="geometry" />
+        <mxCell id="E8tcelXD3QDB-gluEK94-50" value="Display Game State" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="554" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="E8tcelXD3QDB-gluEK94-51" value="Get Word Set Guess" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="220" y="680" width="120" height="60" as="geometry" />
@@ -185,6 +185,39 @@
             <mxPoint x="310" y="626" as="sourcePoint" />
             <mxPoint x="340" y="585.5" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-56" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="E8tcelXD3QDB-gluEK94-50" target="E8tcelXD3QDB-gluEK94-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="584" as="sourcePoint" />
+            <mxPoint x="260" y="534" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-59" value="" style="endArrow=classic;html=1;rounded=0;startArrow=oval;startFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="510.25" as="sourcePoint" />
+            <mxPoint x="290" y="519.75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-60" value="" style="endArrow=classic;html=1;rounded=0;startArrow=oval;startFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="521.5" as="sourcePoint" />
+            <mxPoint x="240" y="531" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-61" value="" style="endArrow=classic;html=1;rounded=0;startArrow=oval;startFill=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="532.5" as="sourcePoint" />
+            <mxPoint x="190" y="542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-62" value="attempts" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="285" y="486" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-64" value="word sets" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="235" y="490" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="E8tcelXD3QDB-gluEK94-66" value="guessed sets" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="181" y="502" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
