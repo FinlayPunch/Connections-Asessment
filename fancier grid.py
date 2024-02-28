@@ -73,7 +73,7 @@ def display_game(word_categories, grid_size):
 
 
 display_game(word_categories[0]["words"][0], 4)
-display_game(word_categories[0]["words"][0], 4)
+
 
 
 
