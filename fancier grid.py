@@ -30,6 +30,8 @@ def setup_word_categories():
         'words': ['Charred', 'Beat', 'Leak', 'Pee']
     }
 
+
+
     word_categories.append(musical_sections_category)
     word_categories.append(party_pooper_category)
     word_categories.append(something_cast_category)
@@ -75,7 +77,7 @@ def display_game(word_categories, grid_size):
         print((grid_size*4+19)*"-")
 
 
-display_game(word_categories[0]["words"][random.randint(0,3)], 4)
+display_game(word_categories, 4)
 
 
 
