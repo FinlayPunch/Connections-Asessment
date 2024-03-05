@@ -12,64 +12,75 @@ def setup_word_categories():
 
     musical_sections_category = {
         'category_name': 'Musical Sections',
+        'gen_num': 1,
         'words': ['Brass', 'Rythym', 'Strings', 'Wind']
     }
 
     party_pooper_category = {
         'category_name': 'Party Pooper',
+        'gen_num': 2,
         'words': ['Bore', 'Drag', 'Drip', 'Dud']
     }
 
     something_cast_category = {
         'category_name': '---Cast',
+        'gen_num': 3,
         'words': ['Pod', 'Type', 'Fore', 'Broad']
     }
 
     vegetable_homophones_category = {
         'category_name': 'Vegetable Homophones',
+        'gen_num': 4,
         'words': ['Charred', 'Beat', 'Leak', 'Pee']
     }
 
     big_of_liquid_category = {
         'category_name': 'Bit of liquid',
+        'gen_num': 5,
         'words': ['Tear', 'Drop', 'Glob', 'Bead']
     }
 
     pursue_category = {
         'category_name': 'Pursue',
+        'gen_num': 6,
         'words': ['Hunt', 'Stalk', 'Track', 'Trail']
     }
 
     eat_a_little_category = {
         'category_name': 'Eat a little',
+        'gen_num': 7,
         'words': ['Graze', 'Nibble', 'Peck', 'Snack']
     }
 
     ministrone_category = {
         'category_name': 'Ingredients in minestrone',
+        'gen_num': 8,
         'words': ['Beans', 'Pasta', 'Stock', 'Vegetables']
     }
 
     basic_tastes_category = {
         'category_name': 'Basic tastes',
+        'gen_num': 9,
         'words': ['Bitter', 'Salty', 'Sour', 'Sweet']
     }
 
     stand_up_to_category = {
         'category_name': 'Stand up to',
+        'gen_num': 10,
         'words': ['Brave', 'Confront', 'Face', 'Meet']
     }
 
     ilk_category = {
         'category_name': 'Ilk',
+        'gen_num': 11,
         'words': ['Kind', 'Sort', 'Type', 'Variety']
     }
 
     ism_movements_category = {
         'category_name': 'Art movements with -ism',
+        'gen_num': 12,
         'words': ['Manner', 'Expression', 'Romantic', 'Surreal']
     }
-
 
     word_categories.append(musical_sections_category)
     word_categories.append(party_pooper_category)
@@ -105,6 +116,7 @@ word_categories = setup_word_categories()
 
 
 def display_game(word_categories, grid_size):
+    
     #This is the top set of dashes
     print((grid_size*4+27)*"-")
 
