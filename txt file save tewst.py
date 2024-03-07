@@ -1,10 +1,42 @@
 playing = True
+GuessIsLetter = False
 
 while playing:
-    Guess1 = input('Guess 1: ')
-    Guess2 = input('Guess 2: ')
-    Guess3 = input('Guess 3: ')
-    Guess4 = input('Guess 4: ')
+    while GuessIsLetter != True:
+        Guess1 = input('Guess 1: ')
+        if not Guess1.isalpha():
+            print("Use only letters")
+        if Guess1.isalpha():
+            GuessIsLetter = True
+            GuessIsLetter = False
+            break
+
+    while GuessIsLetter != True:
+        Guess2 = input('Guess 2: ')
+        if not Guess2.isalpha():
+            print("Use only letters")
+        if Guess2.isalpha():
+            GuessIsLetter = True
+            GuessIsLetter = False
+            break
+
+    while GuessIsLetter != True:
+        Guess3 = input('Guess 3: ')
+        if not Guess3.isalpha():
+            print("Use only letters")
+        if Guess3.isalpha():
+            GuessIsLetter = True
+            GuessIsLetter = False
+            break
+
+    while GuessIsLetter != True:
+        Guess4 = input('Guess 4: ')
+        if not Guess4.isalpha():
+            print("Use only letters")
+        if Guess4.isalpha():
+            GuessIsLetter = True
+            GuessIsLetter = False
+            break
 
    
     new_guesses = f'Guess 1: {Guess1} - Guess 2: {Guess2} - Guess 3: {Guess3} - Guess 4: {Guess4}\n'
