@@ -1,5 +1,6 @@
 playing = True
 GuessIsLetter = False
+import os
 
 while playing:
     while GuessIsLetter != True:
@@ -60,4 +61,5 @@ while playing:
         playing = True
     elif choice.lower() == 'no':
         playing = False
+        os.remove("user_data.txt")
             
