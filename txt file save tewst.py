@@ -20,6 +20,22 @@ while playing:
 
     new_guesses = " - ".join([f"Guess {i}: {guess}" for i, guess in enumerate(guesses, start=1)])
     print(new_guesses)
+    try:
+        with open('user_data.txt', 'r') as file:
+            content = file.read()
+            if new_guesses in content:
+                print("You have already entered these guesses")
+                
+            else:
+                with open('user_data.txt', 'a') as file:
+                    file.write(new_guesses)
+                print("Guesses added")
+    except FileNotFoundError:
+        with open('user_data.txt', 'w') as file:
+            file.write(new_guesses)
+        print("Guesses added")
+    print(new_guesses)
+
 
 
     correct = True
