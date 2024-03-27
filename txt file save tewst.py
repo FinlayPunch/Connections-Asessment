@@ -19,7 +19,6 @@ while playing:
                 print("Use only letters")
 
     new_guesses = " - ".join([f"Guess {i}: {guess}" for i, guess in enumerate(guesses, start=1)])
-    print(new_guesses)
     try:
         with open('user_data.txt', 'r') as file:
             content = file.read()
