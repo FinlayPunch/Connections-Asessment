@@ -112,27 +112,33 @@ def setup_word_categories():
 #     return word_grid
 
 # word_grid = create_word_grid()
+
+
 word_categories = setup_word_categories()
 
 
 def display_game(word_categories, grid_size):
-    
-    #This is the top set of dashes
-    print((grid_size*1)*"..-.----.--.")
 
-    #These are the row that contain the words
+    random.shuffle(word_categories)
+    
+    selected_categories = []
+    
+    selected_categories = word_categories[:grid_size]
+    
+    all_words = []
+    
+    for category in selected_categories:
+        all_words.extend(category['words'])
+    
+    random.shuffle(all_words)
+    
+    print((grid_size * 15) * "-")
+
     for i in range(grid_size):
         for j in range(grid_size):
-            random_word = word_categories[random.randint(0, len(word_categories) - 1)]["words"][random.randint(0, 3)] #random word = a random word from a random category from word categories
-            print(f"| {random_word:9} ", end='')  # adjusts the width to match the longest word
+            word = all_words[i * grid_size + j]
+            print(f"| {word.center(12)} ", end='')
         print("| ")
-        print((grid_size*1)*"..-.----.--.")
-
+        print((grid_size * 15) * "-")
 
 display_game(word_categories, 4)
-
-
-
-
-
-# print_words_from_categories(word_categories)
