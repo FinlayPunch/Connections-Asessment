@@ -1,4 +1,7 @@
 import random
+# import colorama
+
+# init(autoreset=True)
 
 def print_words_from_categories(word_categories):
 

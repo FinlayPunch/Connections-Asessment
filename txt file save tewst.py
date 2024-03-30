@@ -1,4 +1,7 @@
+import os
+
 playing = True
+lives = 4
 
 correctguesses = {
     'correctguess1': 'four',
@@ -35,29 +38,39 @@ while playing:
         print("Guesses added")
     print(new_guesses)
 
-
-
     correct = True
     for i, guess in enumerate(guesses, start=1):
         if guess != correctguesses[f'correctguess{i}']:
             correct = False
+            lives -= 1
+            print(f"Incorrect guess. You have {lives} lives left.")
+            if lives == 0:
+                print("You've run out of lives. Game over.")
+                print("Do you want to keep playing?")
+                while True:
+                    choice = input('Yes or no: ')
+                    if choice.lower() == 'yes':
+                        break  # Start the loop again for a new game
+                    elif choice.lower() == 'no':
+                        playing = False
+                        break
+                    else:
+                        print("Invalid input. Please enter 'yes' or 'no'.")
+                break
             break
 
     if correct:
-        print("your guesses are correct")
-        print("Do you want to keep going?")
-        choice = input('Yes or no: ')
-        if choice.lower() == 'yes':
-            playing = True
-        if choice.lower() == 'no':
-            playing = False
-            break
-    else:
-        print("your guesses aren't correct")
-        print("Do you want to keep going?")
-        choice = input('Yes or no: ')
-        if choice.lower() == 'yes':
-            playing = True
-        if choice.lower() == 'no':
-            playing = False
-            break
+        print("Your guesses are correct")
+        print("Do you want to keep playing?")
+        while True:
+            choice = input('Yes or no: ')
+            if choice.lower() == 'yes':
+                break  # Start the loop again for a new game
+            elif choice.lower() == 'no':
+                playing = False
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
+
+# Remove the file after the player decides to quit the game
+os.remove('user_data.txt')
