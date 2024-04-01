@@ -1,5 +1,6 @@
 playing = True
 lives = 4
+correct_guesses = 0  # Track the number of correctly guessed groups
 import random
 import os
 
@@ -10,7 +11,7 @@ def print_words_from_categories(word_categories):
 
 def setup_word_categories():
     word_categories = []
-
+    
     musical_sections_category = {
         'category_name': 'Musical Sections',
         'gen_num': 1,
@@ -163,7 +164,10 @@ while lives > 0:
 
     if check_guess(user_input, selected_categories):
         print("Your guesses are correct!")
-        playing = False
+        correct_guesses += 1
+        if correct_guesses == 4:  # Check if all groups have been correctly guessed
+            print("Congratulations! You've guessed all groups correctly!")
+            break
     else:
         lives -= 1
         print(f"Incorrect guesses. You have {lives} lives left.")
@@ -171,13 +175,6 @@ while lives > 0:
         if lives == 0:
             print("You've run out of lives. Game over.")
             break
-
-    if not playing:
-        choice = input("Do you want to keep playing? (Yes/No): ")
-        if choice.lower() != 'yes':
-            break
-        
-        save_guesses_to_file(user_input)
 
 # Remove the file after the player decides to quit the game
 if os.path.exists('user_data.txt'):
