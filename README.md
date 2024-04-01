@@ -20,3 +20,13 @@
 4. You have <b>four chances</b> to group words into categories.<br>
 5. If <b>all four guesses</b> are correct then you win.<br>
 </b2>
+
+<h1>Rules</h1>
+
+<b1>
+1. A player only has four attempts to guess all four connections, if they run out of attempts, they lose.<br>
+2. Guesses must be entered into the terminal with one space between them, capitalisation doesn't matter.<br>
+3. If the guess is incomplete (i.e. the player only entered 3 guesses) the program will notify the player to enter in a full set of four.<br>
+4. If there are four, but the words are from different categories, are different words entirely, are not words, or are misspelt, the game will treat the guess as wrong and notify the player of such.<br>
+5. If the player has more than zero attempts left, and they have gotten all four connection right, they win.<br>
+</b1>
