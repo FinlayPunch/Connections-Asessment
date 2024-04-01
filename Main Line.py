@@ -98,22 +98,29 @@ def setup_word_categories():
 
     return word_categories
 
-def display_game(word_categories, grid_size):
-    random.shuffle(word_categories)
-    selected_categories = word_categories[:grid_size]
+def generate_grid(selected_categories, grid_size):
     all_words = []
     for category in selected_categories:
         all_words.extend(category['words'])
 
     random.shuffle(all_words)
 
-    print((grid_size * 15) * "-")
+    grid = []
     for i in range(grid_size):
+        row = []
         for j in range(grid_size):
             word = all_words[i * grid_size + j]
+            row.append(word)
+        grid.append(row)
+    return grid
+
+def display_game(grid):
+    print((len(grid) * 15) * "-")
+    for row in grid:
+        for word in row:
             print(f"| {word.center(12)} ", end='')
         print("| ")
-        print((grid_size * 15) * "-")
+        print((len(grid) * 15) * "-")
 
 def check_guess(guesses, selected_categories):
     # Extract all words and their corresponding categories from the selected categories
@@ -133,7 +140,7 @@ def check_guess(guesses, selected_categories):
 
     print("All guesses are correct!")
     return True
-    
+
 def save_guesses_to_file(guesses):
     try:
         with open('user_data.txt', 'a') as file:
@@ -142,38 +149,36 @@ def save_guesses_to_file(guesses):
         with open('user_data.txt', 'w') as file:
             file.write(' '.join(guesses) + '\n')
 
+# Main game loop
 word_categories = setup_word_categories()
+selected_categories = random.sample(word_categories, 4)
+grid = generate_grid(selected_categories, 4)
 
 while lives > 0:
-    display_game(word_categories, 4)
+    display_game(grid)
     user_input = input("Enter your guesses separated by spaces: ").split()
     if len(user_input) != 4:
         print("Please enter exactly four guesses.")
         continue
 
-    selected_categories = word_categories[:4]
     if check_guess(user_input, selected_categories):
-            print("Your guesses are correct!")
-            playing = False
-            
+        print("Your guesses are correct!")
+        playing = False
     else:
-            lives -= 1
-            print(f"Incorrect guesses. You have {lives} lives left.")
+        lives -= 1
+        print(f"Incorrect guesses. You have {lives} lives left.")
 
-            if lives == 0:
-                print("You've run out of lives. Game over.")
-                break
+        if lives == 0:
+            print("You've run out of lives. Game over.")
+            break
 
-    if playing == False:
+    if not playing:
         choice = input("Do you want to keep playing? (Yes/No): ")
         if choice.lower() != 'yes':
-            playing = False
             break
         
         save_guesses_to_file(user_input)
 
 # Remove the file after the player decides to quit the game
 if os.path.exists('user_data.txt'):
-    os.remove('user_data.txt') 
-
-
+    os.remove('user_data.txt')
