@@ -14,11 +14,11 @@
 <b1>Connections for Python functions in the same way as the base Connections on the New York Times website.</b1><br><br>
 
 <b2>
-1. <b>16 words</b> are randomly generated and placed in a <b>4x4 grid</b>, they are divided into <b>four hidden categories</b>.<br>
-2. One must figure out the <b>connections</b> between the words and group them into <b>sets of four</b>; grouped words become a category.<br>
-3. The user can enter their four guesses into the <b>terminal</b>, the program will determine whether they are right or wrong.<br>
-4. You have <b>four chances</b> to group words into categories.<br>
-5. If <b>all four guesses</b> are correct then you win.<br>
+1. <b>16 words</b> are randomly generated and placed in a <b>4x4 grid</b>, they are divided into <b>four hidden categories</b>.<br><br>
+2. One must figure out the <b>connections</b> between the words and group them into <b>sets of four</b>; grouped words become a category.<br><br>
+3. The user can enter their four guesses into the <b>terminal</b>, the program will determine whether they are right or wrong.<br><br>
+4. You have <b>four chances</b> to group words into categories.<br><br>
+5. If <b>all four guesses</b> are correct then you win.<br><br>
 </b2>
 
 <h1>Rules</h1>
@@ -30,3 +30,11 @@
 4. If there are four, but the words are from different categories, are different words entirely, are not words, or are misspelt, the game will treat the guess as wrong and notify the player of such.<br>
 5. If the player has more than zero attempts left, and they have gotten all four connection right, they win.<br>
 </b1>
+
+<h1>How to set it up</h1>
+
+<b1>
+1. Clone the repository: https://github.com/FinlayPunch/Connections-Asessment.git<br>
+2. Navigate to whether you cloned the repository and open it in the IDE of your choice (Visual Studio Code perhaps).<br>
+3. Open the file in it called Main Line.py. All other files are archaic and served specific purposes early in development<br>
+4. Run the file and play.<br>
