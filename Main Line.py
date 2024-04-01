@@ -175,3 +175,5 @@ while lives > 0:
 # Remove the file after the player decides to quit the game
 if os.path.exists('user_data.txt'):
     os.remove('user_data.txt') 
+
+#test
