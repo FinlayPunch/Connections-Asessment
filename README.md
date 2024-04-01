@@ -21,6 +21,8 @@
 5. If <b>all four guesses</b> are correct then you win.<br><br>
 </b2>
 
+![Screenshot 2024-04-01 123700](https://github.com/FinlayPunch/Connections-Asessment/assets/150302225/32cc0324-d346-4c6a-83ce-f99c55aa9058)
+
 <h1>Rules</h1>
 
 <b1>
@@ -41,4 +43,11 @@
 </b1>
 
 ![Screenshot 2024-04-01 122113](https://github.com/FinlayPunch/Connections-Asessment/assets/150302225/f3423be5-2ef8-469a-9d1d-9cfca86cb6ac)
+
+<h1>Contributing</h1>
+
+<b1>
+All pull requests are welcome. If you desire any major changes you can contact me about them.
+</b1>
+
 
