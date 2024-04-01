@@ -24,17 +24,21 @@
 <h1>Rules</h1>
 
 <b1>
-1. A player only has four attempts to guess all four connections, if they run out of attempts, they lose.<br>
-2. Guesses must be entered into the terminal with one space between them, capitalisation doesn't matter.<br>
-3. If the guess is incomplete (i.e. the player only entered 3 guesses) the program will notify the player to enter in a full set of four.<br>
-4. If there are four, but the words are from different categories, are different words entirely, are not words, or are misspelt, the game will treat the guess as wrong and notify the player of such.<br>
-5. If the player has more than zero attempts left, and they have gotten all four connection right, they win.<br>
+1. A player only has <b>four attempts</b> to guess all four connections, if they run out of attempts, <b>they lose</b>.<br><br>
+2. Guesses must be entered <b>into the terminal</b> with <b>one space between them</b>, capitalisation <b>doesn't matter</b>.<br><br>
+3. If the guess is incomplete <b>(i.e. the player only entered 3 guesses)</b> the program will notify the player to enter in a <b>full set of four</b>.<br><br>
+4. If there are <b>four words</b> in the guess, but the words are from <b>different categories</b>, are <b>different words</b> entirely, are <b>not words</b>, or are <b>misspelt</b>, the game will treat the guess as wrong and notify the player of such.<br><br>
+5. If the player has <b>more than zero</b> attempts left, and they have gotten <b>all four</b> connections right, they win.<br><br>
 </b1>
 
 <h1>How to set it up</h1>
 
 <b1>
-1. Clone the repository: https://github.com/FinlayPunch/Connections-Asessment.git<br>
-2. Navigate to whether you cloned the repository and open it in the IDE of your choice (Visual Studio Code perhaps).<br>
-3. Open the file in it called Main Line.py. All other files are archaic and served specific purposes early in development<br>
-4. Run the file and play.<br>
+1. Clone the repository: https://github.com/FinlayPunch/Connections-Asessment.git<br><br>
+2. Navigate to whether you cloned the repository and open it in the IDE of your choice (Visual Studio Code perhaps).<br><br>
+3. Open the file in it called <b>Main Line.py</b>. All other files are archaic and served specific purposes early in development.<br><br>
+4. Run the file and play.<br><br>
+</b1>
+
+![Screenshot 2024-04-01 122113](https://github.com/FinlayPunch/Connections-Asessment/assets/150302225/f3423be5-2ef8-469a-9d1d-9cfca86cb6ac)
+
