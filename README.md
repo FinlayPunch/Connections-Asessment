@@ -4,7 +4,7 @@
 
 <b1>By Finlay Punch</b1><br><br>
 
-<b2>This is a version of the New York Times game Connections made expressly for use in the Python terminal. It was made by me over the course of 2 months for my Task 1 assessment for Year 11 Software Engineering.
+<b2>This is a version of the New York Times game <b>Connections</b> made expressly for use in the Python terminal. It was made by me over the course of 2 months for my Task 1 assessment for Year 11 Software Engineering.
 </b2>
 
 ![NYT-Connections-og-image](https://github.com/FinlayPunch/Connections-Asessment/assets/150302225/c8cc13db-3352-4103-aba9-5e9b0c4de8ec)
