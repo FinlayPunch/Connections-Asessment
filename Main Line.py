@@ -1,6 +1,6 @@
 playing = True
 lives = 4
-correct_guesses = 0  # Track the number of correctly guessed groups
+correct_guesses = []  # Track the number of correctly guessed groups
 import random
 import os
 
@@ -163,9 +163,9 @@ while lives > 0:
         continue
 
     if check_guess(user_input, selected_categories):
-        print("Your guesses are correct!")
-        correct_guesses += 1
-        if correct_guesses == 4:  # Check if all groups have been correctly guessed
+        print("All guesses are correct!")
+        correct_guesses.append(user_input)
+        if len(correct_guesses) == 4:  # Check if all groups have been correctly guessed
             print("Congratulations! You've guessed all groups correctly!")
             break
     else:
@@ -176,6 +176,17 @@ while lives > 0:
             print("You've run out of lives. Game over.")
             break
 
+    print("Your correct guesses so far:")
+    for guess in correct_guesses:
+        linking_word = None
+        for category in selected_categories:
+            if set(guess) == set(category['words']):
+                linking_word = category['category_name']
+                break
+        if linking_word:
+            print(f"{guess} - Linking word: {linking_word}")
+
+            
 # Remove the file after the player decides to quit the game
 if os.path.exists('user_data.txt'):
     os.remove('user_data.txt')
