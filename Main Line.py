@@ -131,11 +131,13 @@ selected_categories = random.sample(word_categories, 4)
 grid = generate_grid(selected_categories, 4)
 
 while playing:
-    lives = 4
-    correct_guesses = set()
-    incorrect_guesses = set()
+    word_categories = setup_word_categories()
     selected_categories = random.sample(word_categories, 4)
     grid = generate_grid(selected_categories, 4)
+
+    correct_guesses = set((word, category['category_name']) for category in selected_categories for word in category['words'])
+    lives = 4
+    incorrect_guesses = set()
 
     while lives > 0:
         display_game(grid)
@@ -157,7 +159,7 @@ while playing:
 
         if check_guess(user_input, selected_categories):
             print("All guesses are correct!")
-            correct_guesses.add(new_guess)
+            correct_guesses.add((word, category['category_name']) for category in selected_categories for word in user_input)
             if len(correct_guesses) == 4:  # Check if all sets have been correctly guessed
                 print("Congratulations! You've guessed all sets correctly!")
                 if lives == 4:
@@ -180,18 +182,18 @@ while playing:
             print(f"Incorrect guesses. You have {lives} lives left.")
             incorrect_guesses.add(new_guess)  # Add the incorrect guess to the set of incorrect guesses
 
-            if lives == 0:
-                print("You've run out of lives. Game over.")
-                
-                break
-    
+        if lives == 0:
+            print("You've run out of lives. Game over.")
+            break
 
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+
+    while play_again not in ['yes', 'no']:
+        print("Please enter 'yes' to play again or 'no' to quit.")
         play_again = input("Do you want to play again? (yes/no): ").lower()
 
-        if play_again == "yes":
-            continue
-        elif play_again == "no":
-            print("Thank you for playing!")
-            break
-        else:
-            print("Please enter 'yes' to play again or 'no' to quit.")
+    if play_again == "yes":
+        continue
+    elif play_again == "no":
+        print("Thank you for playing!")
+        break
