@@ -1,85 +1,69 @@
 playing = True
 import random
-import os
+import colorama
 
 
-def print_words_from_categories(word_categories):
-    for category in word_categories:
-        for word in category['words']:
-            print(word)
 
 def setup_word_categories():
     word_categories = []
     
     musical_sections_category = {
         'category_name': 'Musical Sections',
-        'gen_num': 1,
         'words': ['Brass', 'Rythym', 'Strings', 'Wind']
     }
 
     party_pooper_category = {
         'category_name': 'Party Pooper',
-        'gen_num': 2,
         'words': ['Bore', 'Drag', 'Drip', 'Dud']
     }
 
     something_cast_category = {
         'category_name': '---Cast',
-        'gen_num': 3,
         'words': ['Pod', 'Type', 'Fore', 'Broad']
     }
 
     vegetable_homophones_category = {
         'category_name': 'Vegetable Homophones',
-        'gen_num': 4,
         'words': ['Charred', 'Beat', 'Leak', 'Pee']
     }
 
     big_of_liquid_category = {
         'category_name': 'Bit of liquid',
-        'gen_num': 5,
         'words': ['Tear', 'Drop', 'Glob', 'Bead']
     }
 
     pursue_category = {
         'category_name': 'Pursue',
-        'gen_num': 6,
         'words': ['Hunt', 'Stalk', 'Track', 'Trail']
     }
 
     eat_a_little_category = {
         'category_name': 'Eat a little',
-        'gen_num': 7,
         'words': ['Graze', 'Nibble', 'Peck', 'Snack']
     }
 
     ministrone_category = {
         'category_name': 'Ingredients in minestrone',
-        'gen_num': 8,
         'words': ['Beans', 'Pasta', 'Stock', 'Vegetables']
     }
 
     basic_tastes_category = {
         'category_name': 'Basic tastes',
-        'gen_num': 9,
         'words': ['Bitter', 'Salty', 'Sour', 'Sweet']
     }
 
     stand_up_to_category = {
         'category_name': 'Stand up to',
-        'gen_num': 10,
         'words': ['Brave', 'Confront', 'Face', 'Meet']
     }
 
     ilk_category = {
         'category_name': 'Ilk',
-        'gen_num': 11,
         'words': ['Kind', 'Sort', 'Type', 'Variety']
     }
 
     ism_movements_category = {
         'category_name': 'Art movements with -ism',
-        'gen_num': 12,
         'words': ['Manner', 'Expression', 'Romantic', 'Surreal']
     }
 
@@ -141,14 +125,6 @@ def check_guess(guesses, selected_categories):
     print("All guesses are correct!")
     return True
 
-def save_guesses_to_file(guesses):
-    try:
-        with open('user_data.txt', 'a') as file:
-            file.write(' '.join(guesses) + '\n')
-    except FileNotFoundError:
-        with open('user_data.txt', 'w') as file:
-            file.write(' '.join(guesses) + '\n')
-
 # Main game loop
 word_categories = setup_word_categories()
 selected_categories = random.sample(word_categories, 4)
@@ -206,14 +182,16 @@ while playing:
 
             if lives == 0:
                 print("You've run out of lives. Game over.")
+                
                 break
+    
 
-    play_again = input("Do you want to play again? (yes/no): ")
-    if play_again.lower() != "yes":
-        print("Thank you for playing!")
-        break
+        play_again = input("Do you want to play again? (yes/no): ").lower()
 
-
-# Remove the file after the player decides to quit the game
-if os.path.exists('user_data.txt'):
-    os.remove('user_data.txt')
+        if play_again == "yes":
+            continue
+        elif play_again == "no":
+            print("Thank you for playing!")
+            break
+        else:
+            print("Please enter 'yes' to play again or 'no' to quit.")
