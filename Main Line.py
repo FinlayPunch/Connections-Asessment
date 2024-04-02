@@ -1,8 +1,9 @@
 playing = True
 lives = 4
-correct_guesses = []  # Track the number of correctly guessed groups
+correct_guesses = set()  # Track the correctly guessed word sets
 import random
 import os
+
 
 def print_words_from_categories(word_categories):
     for category in word_categories:
@@ -124,8 +125,8 @@ def display_game(grid):
         print((len(grid) * 15) * "-")
 
 def check_guess(guesses, selected_categories):
-    # Extract all words and their corresponding categories from the selected categories
-    word_to_category = {word.lower(): category['category_name'] for category in selected_categories for word in category['words']}
+    # Convert all words and their corresponding categories to lowercase for case-insensitive comparison
+    word_to_category = {word.lower(): category['category_name'].lower() for category in selected_categories for word in category['words']}
 
     # Convert user guesses to lowercase
     user_guesses_lower = [guess.lower() for guess in guesses]
@@ -162,12 +163,23 @@ while lives > 0:
         print("Please enter exactly four guesses.")
         continue
 
+    new_guess = frozenset(user_input)  # Convert the guesses to frozenset for immutability
+    if new_guess in correct_guesses:
+        print("You have already guessed this set correctly.")
+        continue
+
     if check_guess(user_input, selected_categories):
         print("All guesses are correct!")
-        correct_guesses.append(user_input)
-        if len(correct_guesses) == 4:  # Check if all groups have been correctly guessed
-            print("Congratulations! You've guessed all groups correctly!")
+        correct_guesses.add(new_guess)
+        if len(correct_guesses) == 4:  # Check if all sets have been correctly guessed
+            print("Congratulations! You've guessed all sets correctly!")
             break
+        # Print the correctly guessed set and its linking word
+        for category in selected_categories:
+            if set(user_input) == set(category['words']):
+                print(f"Correctly guessed set: {user_input}")
+                print(f"Linking phrase: {category['category_name']}")
+                break
     else:
         lives -= 1
         print(f"Incorrect guesses. You have {lives} lives left.")
@@ -176,17 +188,6 @@ while lives > 0:
             print("You've run out of lives. Game over.")
             break
 
-    print("Your correct guesses so far:")
-    for guess in correct_guesses:
-        linking_word = None
-        for category in selected_categories:
-            if set(guess) == set(category['words']):
-                linking_word = category['category_name']
-                break
-        if linking_word:
-            print(f"{guess} - Linking word: {linking_word}")
-
-            
 # Remove the file after the player decides to quit the game
 if os.path.exists('user_data.txt'):
     os.remove('user_data.txt')
