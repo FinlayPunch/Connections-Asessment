@@ -83,6 +83,10 @@ def setup_word_categories():
 
     return word_categories
 
+print("Hello, and welcome to Connections for Python!")
+print("It functions in practically the same way as connections does.")
+print("You can have a look at the read me for the rules.")
+
 # Function that generates a grid of words based on the categories that get selected and the grid size
 def generate_grid(selected_categories, grid_size):
     all_words = []
@@ -160,7 +164,7 @@ while playing:
         display_game(grid)
 
         # Prompt the player to enter their guesses separated by spaces and split the input into a list
-        user_input = input("Enter your guesses separated by spaces: ").split()
+        user_input = input("Enter your guesses separated by spaces AND with capital letters: ").split()
 
         # Check if the number of guesses entered by the player is not exactly four
         if len(user_input) != 4:
