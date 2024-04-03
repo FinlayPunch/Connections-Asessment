@@ -1,8 +1,5 @@
 playing = True
 import random
-import colorama
-
-
 
 def setup_word_categories():
     word_categories = []
