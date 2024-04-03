@@ -27,7 +27,7 @@
 
 <b1>
 1. A player only has <b>four attempts</b> to guess all four connections, if they run out of attempts, <b>they lose</b>.<br><br>
-2. Guesses must be entered <b>into the terminal</b> with <b>one space between them</b>, capitalisation <b>doesn't matter</b>.<br><br>
+2. Guesses must be entered <b>into the terminal</b> with <b>one space between them</b>, capitalisation <b>each word needs to be capitalised</b>.<br><br>
 3. If the guess is incomplete <b>(i.e. the player only entered 3 guesses)</b> the program will notify the player to enter in a <b>full set of four</b>.<br><br>
 4. If there are <b>four words</b> in the guess, but the words are from <b>different categories</b>, are <b>different words</b> entirely, are <b>not words</b>, or are <b>misspelt</b>, the game will treat the guess as wrong and notify the player of such.<br><br>
 5. If the player has <b>more than zero</b> attempts left, and they have gotten <b>all four</b> connections right, they win.<br><br>
